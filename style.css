@@ -17,6 +17,7 @@ body {
 .container {
 	display: flex;
 	width: 90vw;
+	max-width: 680px;
 }
 
 .panel {
@@ -45,7 +46,6 @@ body {
 }
 
 .panel.active {
-	align-items: stretch;
 	flex: 5;
 }
 
@@ -61,6 +61,7 @@ body {
 
 	.container {
 		width: 100vw;
+		min-width: 315px;
 		height: 90%;
 		flex-direction: column;
 	}
