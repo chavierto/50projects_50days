@@ -7,7 +7,6 @@
 body {
 	font-family: 'Muli', sans-serif;
 	display: flex;
-
 	align-items: center;
 	justify-content: center;
 	height: 100vh;
@@ -27,11 +26,13 @@ body {
 	height: 80vh;
 	border-radius: 5px;
 	color: #fff;
+	background-color: #777777;
+	/* Added bg color to figure out what was happening with the box width. It was working fine, but since the image is only x wide, it centers it. How can I flex grow up until the image width? */
 	cursor: pointer;
 	flex: 0.5;
 	margin: 10px;
 	position: relative;
-	transition: flex 0.7s ease-in;
+	transition: flex 0.4s ease-in;
 }
 
 .panel h3 {
@@ -44,21 +45,23 @@ body {
 }
 
 .panel.active {
+	align-items: stretch;
 	flex: 5;
 }
 
 .panel.active h3 {
 	opacity: 1;
-    transition: opacity 0.3s ease-in 0.4s;
+	transition: opacity 0.3s ease-in 0.4s;
 }
 
 @media (max-width: 480px) {
-	.container {
-		width: 100vw;
+	.panel {
+		background-size: 100%;
 	}
 
-	.panel:nth-of-type(4),
-	.panel:nth-of-type(5) {
-		display: none;
+	.container {
+		width: 100vw;
+		height: 90%;
+		flex-direction: column;
 	}
 }
